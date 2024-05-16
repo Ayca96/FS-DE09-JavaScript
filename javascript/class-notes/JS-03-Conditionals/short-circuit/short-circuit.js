@@ -45,10 +45,10 @@ console.log(" " && "Ayca" && "Merhaba"/5); //Nan
 // }
 
 
-for (let i = 1; i <= 5; i++) {
-  let satir = '';
-  for (let j = 1; j <= i; j++) {
-      satir += 'x';
-  }
-  console.log(satir);
-}
+// for (let i = 1; i <= 5; i++) {
+//   let satir = '';
+//   for (let j = 1; j <= i; j++) {
+//       satir += 'x';
+//   }
+//   console.log(satir);
+// }
