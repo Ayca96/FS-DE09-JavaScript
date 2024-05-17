@@ -113,21 +113,23 @@
 // const pass = 1234;
 // let hak = 3;
 
-// while (hak > 0) {
+//   while (hak > 0) {
 //   let username = prompt("Kullanici adinizi girin:");
 //   let password = +prompt("Parolanizi girin:");
 
-//   if (username === user && password === pass) {
-//     alert(`Hoş geldiniz, ${username}!`);
-//     break;
-//   } else {
-//     hak--;
-//     if (hak > 0) {
-//       alert("Kullanici adi veya parola yanliş. Lütfen tekrar deneyin.");
-//     } else {
-//       alert("3 kez yanliş girdiniz.");
+//     if (username === user && password === pass) {
+//       alert(`Hoş geldiniz, ${username}!`);
+//       break;
+//     } 
+//     else {
+//         hak--;
+//         if (hak > 0) {
+//           alert("Kullanici adi veya parola yanliş. Lütfen tekrar deneyin.");
+//         } 
+//         else {
+//           alert("3 kez yanliş girdiniz.");
+//         }
 //     }
-//   }
 // }
 
 // let username = "Ali";
@@ -159,17 +161,41 @@
 //*   #######
 //*  #########
 
-// let rows = 5;
-// for (let i = 1; i <= rows; i++) {
-//     let row = '';
-//     for (let b = 1; b <= rows - i; b++) {
-//         row += ' ';
+// let toplamSatir = 5;
+// for (let i = 1; i <= toplamSatir; i++) {
+//     let herBirSatir = '';
+//     for (let degiskenBir = 1; degiskenBir <= toplamSatir-i ; degiskenBir++) {
+//         // console.log("burasi degiskenBir");
+//         // console.log(degiskenBir);
+//         herBirSatir += ' ';
 //     }
-//     for (let k = 1; k <= 2 * i - 1; k++) {
-//         row += '#';
+//     for (let degiskenIki = 1; degiskenIki <= 2 * i - 1; degiskenIki++) {
+//         //console.log("sura degiskenIki");
+//         //console.log(degiskenIki);
+//         herBirSatir += '#';
 //     }
-//     console.log(row);
+//     console.log(herBirSatir);  
 // }
+// for (let i = 1; i <= toplamSatir; i++) {
+//   let herBirSatir = '';
+//   for (let degiskenBir = 4; degiskenBir >= toplamSatir-i ; degiskenBir--) {
+//       // console.log("burasi degiskenBir");
+//       // console.log(degiskenBir);
+//       herBirSatir += ' ';
+//   }
+//   for (let degiskenIki = 7; degiskenIki >= 2 * i - 1; degiskenIki--) {
+//       //console.log("sura degiskenIki");
+//       //console.log(degiskenIki);
+//       herBirSatir += '#';
+//   }
+//   console.log(herBirSatir);  
+// }
+
+
+
+
+
+
 
 //**örnek */
 //     * 
@@ -251,28 +277,28 @@
  //*Armstrong number while solution
 //!  verilen sayının tüm basamaklarının sayı değerlerinin basamak adedi kadar kuvvetinin toplamı kendisine eşitse bu bir armstrong sayıdır.
 
-let num = +prompt("Enter a number:");
-let originalNumber = num;
-let sayac = 0;
-let sum = 0;
+// let num = +prompt("Enter a number:");
+// let originalNumber = num;
+// let sayac = 0;
+// let sum = 0;
 
 
 
-while (originalNumber != 0) {
-  originalNumber = Math.floor(originalNumber / 10);
-  console.log(originalNumber);
-  sayac++;
-}
+// while (originalNumber != 0) {
+//   originalNumber = Math.floor(originalNumber / 10);
+//   console.log(originalNumber);
+//   sayac++;
+// }
 
-originalNumber = num;
+// originalNumber = num;
 
-while (originalNumber > 0) {
-  let sayi = originalNumber % 10;
-  sum += sayi ** sayac;
-  originalNumber = Math.floor(originalNumber / 10);
-}
+// while (originalNumber > 0) {
+//   let sayi = originalNumber % 10;
+//   sum += sayi ** sayac;
+//   originalNumber = Math.floor(originalNumber / 10);
+// }
 
-sum == num
-  ? console.log(num + " is an Armstrong number.")
-  : console.log(num + " is not an Armstrong number.");
+// sum == num
+//   ? console.log(num + " is an Armstrong number.")
+//   : console.log(num + " is not an Armstrong number.");
 
