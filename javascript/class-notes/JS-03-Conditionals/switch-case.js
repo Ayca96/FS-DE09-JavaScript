@@ -59,7 +59,7 @@ console.log("-------------------------------------");
 
 //? ornek: maasınız asgari ücretten düşük ve eşitse maaşınıza %25 zam yapılsın, değilse maaşınıza %10 zam yapılsın. Ternary ile cözünüz.
 
-// const asgariÜcret = 17.000;
+// const asgariÜcret = 17000;
 // const maas = +prompt ("maasinizi giriniz.");
 
 // const zamliMaas = maas <= asgariÜcret ? maas * 1.25 : maas * 1.10;
