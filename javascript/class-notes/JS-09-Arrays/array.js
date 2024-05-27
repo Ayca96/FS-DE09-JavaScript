@@ -65,9 +65,7 @@ console.log(meyveler); // (5) ['Erik', 'Armut', 'cilek', 'Kavun', 'karpuz']
 meyveler.unshift("Ayva");
 console.log(meyveler); //(6) ['Ayva', 'Erik', 'Armut', 'cilek', 'Kavun', 'karpuz']
 
-
 //*reverse() dizinin tamamını ters çevirir.
-
 
 //! reverse = tersine cevirmek
 
@@ -75,8 +73,6 @@ meyveler.reverse()
 console.log(meyveler); // ['karpuz', 'Kavun', 'cilek', 'Armut', 'Erik', 'Ayva']
 
 console.log(meyveler[3].split("").reverse()); // ['t', 'u', 'm', 'r', 'A']
-
-
 
 //*splice() 1. parametre dizinin eleman ekleyeceğimiz index ini belirtir
 //*2. parametre=0 ise belirttiğim index teki elemanı sağa ittir, artık itilen elemanin yerinde yeni yazdığım olsun.
@@ -97,7 +93,6 @@ meyveler.splice(4,1); // 3 indexli eleman olan cilek kalici silindi.
 console.log(meyveler); 
 
 
-
 //*sort(), string ifadelerde alfabetik sıralar(ascıı değerlerine göre)
 //* sort metodu diziyi iterasyona uğratır ve parametre olarak aldığı arrow fonksiyonunu (a-b>0 önce b yi yaz gibi) dizinin her bir elemanına uygular. Bu sayade küçük sayılar ile büyük sayıları yer değişirerek sıralama işlemini gerçekleştirir.
 
@@ -105,7 +100,6 @@ console.log(meyveler);
 
 meyveler.sort()  //  ASCII tablosuna göre büyük harfler kücük harflere göre daha öncelikli geliyor.
 console.log(meyveler); //['Ananas', 'Ananas', 'Ayva', 'Erik', 'Kavun', 'karpuz', 'çilek'] "ç" bu harf ingilizcede olmadigi icin sona atiyor tanimiyor.
-
 
 
 const number = [3, 5, 1, 35, 10, 22, 55, 77, 231];
@@ -118,3 +112,95 @@ const number = [3, 5, 1, 35, 10, 22, 55, 77, 231];
 
 number.sort((a,b) => b - a); // büyükten kücüge siraliyor.
 console.log(number); // [231, 77, 55, 35, 22, 10, 5, 3, 1]
+
+//? ===========================================================
+//?  DİZİ ERİŞİM METOTLARI (diziyi değiştirmezler)
+//? ===========================================================
+
+const sayilar1 = [3, 5, 2, "2", "uc", 2, "bes", 5, "6"];
+
+console.log(sayilar1.includes("5")); // false
+console.log(sayilar1.includes(5)); //true
+
+
+//indexOf() lastindexOf()
+
+console.log(sayilar1.indexOf("uc")); //4
+console.log(sayilar1.indexOf(5)); //1
+console.log(sayilar1.lastIndexOf(5)); //7
+console.log(sayilar1.indexOf(5,2)); //7
+
+//********** */ Örnek
+//* kullanıcıdan sayı isteyin. girilen sayının hem string hem number hali sayılar dizisinde var mı araştır, varsa index ini döndür
+// const sayilar1 = [3, 5, 2, "2", "uc", 2, "bes", 5, "6"];
+
+// const sayiString=prompt("lütfen bir sayı giriniz")
+
+// const sayiNumber=Number(sayiString)
+
+
+// if(sayilar1.includes(sayiString)){
+//     console.log("aradığınız sayının string hali dizide var", sayilar1.indexOf(sayiString));
+
+// }else{
+//     console.log("aradığınız sayının string hali yok");
+// }
+
+
+// if (sayilar1.includes(sayiNumber)) {
+//   console.log(
+//     "aradığınız sayının number hali dizide var",
+//     sayilar1.indexOf(sayiNumber)
+//   );
+// } else {
+//   console.log("aradığınız sayının number hali yok");
+// }
+
+
+//* join()
+//*-----------------------------------------------------------
+//? join, dizinin elamanlari birlestirip string hale cevirir.join("x")=>varolan virgül+boşluk sil, elemanların aralarına x koy(mesela join parantezinde boşluk yerine 2 varsa her eleman arasına 2 koy demek) 
+//* split(" ")=>string i boşluklardan ayırır,boşlukları silip virgül+boşluk yapar ve yeni dizi döndürür.orijinal diziyi değiştirmez.
+
+console.log(sayilar1.join(" ")); //3 5 2 2 uc 2 bes 5 6
+console.log(sayilar1.join("")); //3522uc2bes56
+console.log(sayilar1.join("A")); //3A5A2A2AucA2AbesA5A6
+
+const meyveler1 = ["Elma", "Erik", "Armut", "Muz", "Kivi"];
+console.log(meyveler1[3].split("").reverse().join("")); //zuM
+
+//toString()
+//? toString fonksiyonu sadece dizinin elemanlarinin aralarina
+//? (virgul) koyarak birlestirir ve string yapar.
+
+//************** slice()**************/
+
+const araba = ["bmw","mercedes","audi","ferrari","lamborgini"];
+
+console.log(araba.slice(3)); // (2) ['ferrari', 'lamborgini']
+console.log(araba.slice(1,3)); //(2) ['mercedes', 'audi'] 3.indexi almiyor.
+
+const kisiler=["özlem","esra", "nihal", "fatih","hüseyin"]
+const rakamlar=[1,2,3,4,5,6];
+console.log(kisiler.concat(rakamlar)); //(11) ['özlem', 'esra', 'nihal', 'fatih', 'hüseyin', 1, 2, 3, 4, 5, 6]
+
+const birlesik = kisiler.concat(rakamlar,true,"ayse","gökce", ["fatih","kemal"],3, [["ayca","ömer"]]) 
+
+console.log(birlesik); //(18)  ['özlem', 'esra', 'nihal', 'fatih', 'hüseyin', 1, 2, 3, 4, 5, 6, true, 'ayse', 'gökce', 'fatih', 'kemal', 3, Array(2)]
+
+//************ every() *****/
+
+//? Tum diziyi itere eder ve aldigi callback fonksiyonuna gore
+//? test gerceklestirir.Tum elemanlar icin test basarili ise
+//? true aksi takdirde false deger dondurur.
+
+const yas=[18,23,34,45,56,89,15]
+console.log(yas.every((a)=> a>= 18)); //false uymayan 15 var herkes uymadigi icin false döndürdü.
+console.log(yas.every((a)=> a<90)); //true
+
+/*******some() */
+//? Aldigi callback fonksiyonuna (bizim yazdigimiz fonksiyon) göre test gerceklestirir.
+//?En az bir eleman icin bile test basarili ise true aksi takdirde false döndürür.
+
+console.log(yas.some((osman) => osman >70)); //true
+console.log(yas.some((osman) => osman >90)); //false
