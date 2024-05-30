@@ -159,4 +159,17 @@ for (let i of arabalar){
 //! for loop=> Break ifadesi döngüden çıkmak için kullanılabilir.	
 //? forEach=> Break ifadesi, geri arama işlevi nedeniyle kullanılamaz.
 
+const myArr = ["1", 2, "Hello","World"]
+myArr.push ("Cohort DE09!")
 
+if(myArr.includes ("Cohort DE09!")){
+for(let i = 0; i< myArr.length; i++){
+
+  if(myArr[i] === "Cohort DE09!"){
+    myArr[i]= "FS Chort DE09!"
+  }
+}
+
+
+}
+console.log(myArr);
