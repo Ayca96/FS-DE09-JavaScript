@@ -17,13 +17,13 @@ const car2 = new Object ({name:"volvo", engine:2.0, model:2008});
 
 console.log(car1); //
 console.log(car1.name); //BMW
-console.log(car1.engine); //1.6 bu daha cok tercih ediliyor.
-console.log(car1["engine"]); //1.6
+console.log(car1.engine); //1.6 bu daha cok tercih ediliyor. dot notation
+console.log(car1["engine"]); //1.6 square bracket
 
 //? Square bracket yonteminin en buyuk avantaji key degerini
 //? degisken olarak kullanabilmemizdir.
 
-const car3 = ({});
+const car3 = new Object({}); // bos object actik icini asagidaki sekilde doldurduk.
 car3.name="mercedes";
 car3.motor= 1.8;
 console.log(car3); //{name: 'mercedes', motor: 1.8}
@@ -76,9 +76,9 @@ console.log(person.birth); //1975 kalici degismis oluyor.
 //? Yeni Property eklemek
 
 person.location="America" 
-console.log(person);
+console.log(person); // location:"America"
 
-// map, filter,forEach sadece dizilerde calisir.
+//todo map, filter,forEach sadece dizilerde calisir.
 
 //*örnek
 
@@ -101,7 +101,7 @@ const mensch = {
   selamla:() => "merhaba"
 };
 
-//! Objenin icindeki degerleri kullanarak bir fonksiyon yazcaksak this keywordü kullanilmali, arrow function this i desteklemedigi icin ilk fonksiyonda decleration yöntemini tercih ettik.
+//! Objectin icindeki degerleri kullanarak bir fonksiyon yazcaksak this keywordü kullanilmali, arrow function this i desteklemedigi icin ilk fonksiyonda decleration yöntemini tercih ettik.
 
 console.log(mensch);
 console.log(mensch.yasHesapla()); //Johny oyuncusu 54 yasindadir
@@ -154,9 +154,9 @@ const people = [
 
   //*Örnek1 people dizisindeki joblar gösterin.
 
-  console.log(people[0].job); // developer
+  console.log(people[0].job); // developer böyle tek tek index vererek buluruz ama uzun sürer.
 
-  people.forEach((a)=>console.log(a.job));
+  people.forEach((a)=>console.log(a.job)); // Bu sekilde tüm dizideki joblari görebiliriz.
 
   //*Örnek2 yaslari 1 er arttir ve sonucu yeni bir diziye aktar.
 
@@ -179,7 +179,7 @@ console.log(people[0].age); //32
 
 //* örnek4 people (object li ) dizisinden yaşları değişmiş olarak joblari olmadan,yeni bir object li dizi oluşturalım, keyleri farkli olsun.
 
-const yeniPeople= people.map((human)=>({
+const yeniPeople= people.map((human)=>({ // burdaki süslü parantez objectin süslüsü normal parantez koymazsak arrow functionun süslüsü sanar.
 
 isim:human.name,
 soyad:human.surname,
@@ -188,8 +188,8 @@ yas:human.age+1,
 
 }))
 
-console.log(yeniPeople);
-console.log(people);// eski dizi degismedi ayni kaldi.
+console.log(yeniPeople); //yeni diziyi olusturdu.
+console.log(people);// eski dizi degismedi ayni kaldi. map diziyi kalici degistirmez.
 
  //* örnek5 her elemanın name ini büyük harfli yaz, yaslarını 2 kat yap, job larının önüne senior kelimesi ekleyelim ve bunları yeni bir diziye atalım.
 
