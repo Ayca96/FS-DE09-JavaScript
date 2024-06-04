@@ -44,4 +44,16 @@ iki.src="./img/iki.webp"
 
 }
 
-// ayni etikete hem onclick hem ondoubleclick vermek mantikli olmayabiliyor.
+// ayni etikete hem onclick hem ondoubleclick vermek mantikli olmayabiliyor. Istenmeyen sonuclar olabilir.
+
+//*example3
+
+ const buton = document.querySelector("#btn")
+
+ buton.onclick=()=>{
+
+  buton.textContent="TIKLANDI"
+  badi.style.background="aqua"
+  document.querySelector("#par").style.fontSize="40px"
+
+ }
