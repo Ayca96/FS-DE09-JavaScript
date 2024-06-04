@@ -78,3 +78,12 @@ iki.src="./img/iki.webp"
 
 
  });
+
+
+ //* EXAMPLE-4 (Mouse Over, Mouse Out )
+//* -------------------------------------------------------
+
+//?METHOD-3 (HTML-INLINE)
+//?--------------------------------------------------------
+
+// kodlari html sayfasinda. oraya bak.
