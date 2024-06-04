@@ -44,16 +44,37 @@ iki.src="./img/iki.webp"
 
 }
 
-// ayni etikete hem onclick hem ondoubleclick vermek mantikli olmayabiliyor. Istenmeyen sonuclar olabilir.
+// iki.ondblclick = () => {
+//   bir.src = "./img/js_logo.png";
+//   iki.src = "./img/logo2.png";
+// };
+// iki.onclick = () => {
+//   iki.src = "./img/iki.webp";
+// };
+
+
+// ayni etikete hem onclick hem ondoubleclick vermek mantikli olmayabiliyor. Istenmeyen sonuclar olabilir. Yorumdaki örnek gibi yazarsak sorun cikmaz.
 
 //*example3
 
  const buton = document.querySelector("#btn")
 
- buton.onclick=()=>{
+ buton.onclick=()=>{  // buton.onclick=function(){}   funciton expression yazimi
 
   buton.textContent="TIKLANDI"
   badi.style.background="aqua"
   document.querySelector("#par").style.fontSize="40px"
 
  }
+
+
+ //? METHOD-2 (Sadece Javascript te yazilir- addEventListener ())  2.YOL
+
+ buton.addEventListener("click", ()=>{
+
+  buton.textContent="TIKLANDI"
+  badi.style.background="aqua"
+  document.querySelector("#par").style.fontSize="40px"
+
+
+ });
