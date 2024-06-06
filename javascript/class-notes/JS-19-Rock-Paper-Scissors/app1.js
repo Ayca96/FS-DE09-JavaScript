@@ -53,9 +53,9 @@ selectionArticle.addEventListener("click", (e) => {
 
 const createPCSelection = () => {
   pcArr = ["rock", "paper", "scissor"];
-  //pcRandom = "rock" // hile fonksiyonu
+  pcRandom = "rock" // hile fonksiyonu
   //pcRandom = Math.floor( Math.random()*3) //1. yöntem
-  pcRandom = pcArr[Math.trunc(Math.random() * 3)]; //2.yöntem
+ // pcRandom = pcArr[Math.trunc(Math.random() * 3)]; //2.yöntem
   //console.log(pcRandom);
   pcSelectImg.src = `./assets/${pcRandom}.png`;
   pcSelectImg.id = "pcs"
