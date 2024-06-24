@@ -23,12 +23,35 @@
 
 // fetch ("https://api.github.com/users").then((response) => response.json()).then((veri) =>console.log(veri))
 
+
+const getirData = () => {
+
 fetch(("https://api.github.com/users")).then((res)=>{
 
-if (res.ok == false) {
+if (!res.ok) {  // res.ok == false yani anlam
 
-  throw new Error ()
+  throw new Error ("url de hata var")
+}
+
+ return res.json()
+}).then((veri)=>ekranaBastir(veri));
 }
 
 
+document.querySelector("button").onclick = ()=>{getirData()}
+
+
+
+const ekranaBastir = (veri) =>{
+
+veri.forEach((person)=>{
+
+document.querySelector("section").innerHTML += `
+<h1>${person.login}</h1>
+<img width="30%" src=${person.avatar_url}/>
+<h3>${person.node_id}</h3>
+
+`
 })
+
+}
