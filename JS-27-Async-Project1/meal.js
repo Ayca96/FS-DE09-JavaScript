@@ -42,3 +42,26 @@ console.log(dizi);
 let veri = dizi.meals.filter((a)=> a.strMeal.toLowerCase().includes(e.target.value.toLowerCase()))
 showScreen(veri)
 }
+
+
+
+//! Bayraklara tiklaninca tiklanan ülkenin yemekleri gelsin.
+
+document.querySelectorAll("img").forEach((a)=>
+
+
+(a.onclick=()=>{
+
+
+fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?a=${a.id}`)
+.then((res)=>res.json())
+.then((data)=> showScreen(data.meals))
+
+})
+
+
+
+
+
+
+)
