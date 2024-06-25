@@ -19,13 +19,30 @@ const defaultImage =
 
 
 const getData = async() => {
+try{
+   const res = await fetch("https://api.tvmaze.com/search/shows?q=girls")
 
-  const res = await fetch("https://api.tvmaze.com/search/shows?q=girls")
+  //? error handling
+  if (!res.ok) {
+    throw new Error (`url de hata var ${res.status}`) 
+    console.log("hata");
+    // throw yapinca bir alt satira kod yazarsak silik oluyor calismiyor. try{} icine aldik tüm fonksiyonu.
+  }
 
   const veri = await res.json()
   ekranaBastir(veri)
+
+}catch(error){
+console.log(error);
+console.log("try-catch sayesinde kod devam ediyor");
+document.querySelector("section").innerHTML = `
+<h1>${error}</h1>
+<img src ="./images/404.png"/>
+`
 }
- 
+  
+}
+
 getData()
 
 const ekranaBastir = (data) =>{
@@ -38,7 +55,6 @@ data.forEach(program => {
   <h1 class="text-danger">${program.show.name}</h1>
   <img src = "${program.show.image?.medium || defaultImage}"/>
   
-
   `
 
 });
