@@ -48,4 +48,5 @@ countries.forEach(a => {
 //? Object.values(country.currencies)=currencies in value larını bir dizide toplar
 
 //* TRY: nin value sini dizi yapar 0 indexli: [{name: 'Turkish lira', symbol: '₺'}]. TRY key i silinir
-//* Object.values(country.languages)=languages in value larını bir dizide toplar[eng,span..] Eng key i silinir
+//* Object.values(country.languages)=languages in value larını bir dizide toplar[eng,span..] Eng key i silinir.
+// Bu kisim cok önemli.
